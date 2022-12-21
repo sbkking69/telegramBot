@@ -37,11 +37,16 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
-            
+
     screen.fill((0,0,0))
 
-    for obj in listObj:
-        obj.Update()
+    TimeList = []
 
+    for obj in listObj:
+        obj.Update()        
+        if obj.y >= 480:
+            TimeList.append(obj)
+    listObj = TimeList
+        
 
     pygame.display.update()
