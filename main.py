@@ -1,8 +1,8 @@
 import telebot
-import data
+from data import *
 import command
 
-bot = telebot.TeleBot(data.token)
+bot = telebot.TeleBot(token)
 
 @bot.message_handler(commands=['start'])
 def start(message):
