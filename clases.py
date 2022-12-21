@@ -48,14 +48,15 @@ class Player(GameObject):
         self.x = 180
         self.speed = 50
         self.x_new = 180
+        self.plavnoti = 5
     
     def Update(self):
         super().Update()
         if self.x != self.x_new:
             if self.x > self.x_new:
-                self.x -= 10
+                self.x -= self.plavnoti
             else:
-                self.x += 10
+                self.x += self.plavnoti
 
     def Event(self, event):
         if event.type == pygame.KEYDOWN:
