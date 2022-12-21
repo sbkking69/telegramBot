@@ -43,14 +43,15 @@ class Player(GameObject):
         self.x = 180
         self.speed = 50
         self.x_new = 180
+        self.plavnoti = 5
     
     def Update(self):
         super().Update()
         if self.x != self.x_new:
             if self.x > self.x_new:
-                self.x -= 10
+                self.x -= self.plavnoti
             else:
-                self.x += 10
+                self.x += self.plavnoti
 
     def Event(self, event):
         if event.type == pygame.KEYDOWN:
@@ -58,7 +59,7 @@ class Player(GameObject):
                 if(self.x_new - self.speed < 0): self.x_new = 0
                 else: self.x_new -= self.speed
             elif event.key == pygame.K_RIGHT:
-                if(self.x_new  + 100 + self.speed > 360): self.x = 360
+                if(self.x_new  + 100 + self.speed > 360): self.x_new = 260
                 else: self.x_new += self.speed
     
     def Draw(self):
