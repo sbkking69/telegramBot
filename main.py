@@ -20,7 +20,10 @@ clock = pygame.time.Clock()
 
 listObj = []
 boll = Boll()
+pl = Player()
+
 listObj.append(boll)
+listObj.append(pl)
 
 
 # Цикл игры
@@ -44,9 +47,10 @@ while running:
 
     for obj in listObj:
         obj.Update()        
-        if obj.y >= 480:
+        if obj.y <= 500:
             TimeList.append(obj)
     listObj = TimeList
         
+
 
     pygame.display.update()

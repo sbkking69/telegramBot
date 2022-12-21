@@ -6,8 +6,8 @@ class GameObject:
         self.x = 0
         self.y = 0
     
-    def Start(self):
-        pass
+    def Start(self, sr):
+        self.sr = sr
 
     def Update(self):
         self.Event()
@@ -24,8 +24,7 @@ class GameObject:
 
 class Boll(GameObject):
     def Start(self, sr):
-        super().Start()
-        self.sr = sr
+        super().Start(sr)
         self.y = -20
         self.x = randint(11, 349)
         self.speed = 5
@@ -39,10 +38,10 @@ class Boll(GameObject):
         pygame.draw.circle(self.sr, (255, 0, 0) , (self.x, self.y), 10)
 
 class Player(GameObject):
-    def Start(self):
-        self.y = 500
+    def Start(self,sr):
+        super().Start(sr)        
+        self.y = 400
         self.x = 180
-        super().Start()
     
     def Update(self):
         super().Update()
@@ -56,4 +55,4 @@ class Player(GameObject):
                     self.x -= 10
     
     def Draw(self):
-        pygame.draw.circle(self.sr, (0, 255, 0) , (self.x, self.y), 50)
+        pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, 100, 25), 10)
