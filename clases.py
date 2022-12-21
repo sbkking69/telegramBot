@@ -49,7 +49,9 @@ class WhiteBall(Boll):
 
 class Player(GameObject):
     def Start(self,sr):
-        super().Start(sr)        
+        super().Start(sr)  
+        self.width = 100
+        self.hight = 25      
         self.y = 400
         self.x = 180
         self.speed = 50
@@ -74,4 +76,10 @@ class Player(GameObject):
                 else: self.x_new += self.speed
     
     def Draw(self):
-        pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, 100, 25))
+        pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, self.width, self.hight))
+
+    def Collision(self, obj):
+        if obj.x + obj.r > self.x - obj.r and obj.x - obj.r < self.x + obj.r + self.width and obj.y > self.y and obj.y < self.y + self.hight:
+
+            return True
+        return False
