@@ -1,3 +1,4 @@
+#MAIN - start program
 import telebot
 import data
 import command
@@ -15,7 +16,5 @@ def start(message):
 def help(message):
     pass
 
-def test():
-    pass
 
 bot.polling(none_stop=True)
