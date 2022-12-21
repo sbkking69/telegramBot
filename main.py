@@ -1,17 +1,14 @@
-from clases import Game
-
-
-while True:
-    try:
-        user = int(input('Угадайте число от 1 до 10! Ваш вариант:'))
-        g = Game(user)
-        if g[0]:
-            print("Вы угадали!")
-        else:
-            print("Вы не угадали! Число: " + g[1])
-
-        user = input('Вы хотите продолжить? (0 - выход)')
-        if user == '0':
-            break
-    except:
-        pass
+import pygame
+import random
+WIDTH = 600
+HEIGHT = 480
+FPS = 60
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("My Game")
+clock = pygame.time.Clock()
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
