@@ -23,11 +23,10 @@ class GameObject:
 
 class Boll(GameObject):
     def Start(self, sr):
-        super().Start()
-        self.sr = sr
+        super().Start(sr)
         self.y = randint(-1000, -20)
         self.x = randint(11, 349)
-        self.speed = 5
+        self.speed = 6
 
     def Update(self):
         super().Update()
@@ -64,7 +63,7 @@ class Player(GameObject):
                 if(self.x_new - self.speed < 0): self.x_new = 0
                 else: self.x_new -= self.speed
             elif event.key == pygame.K_RIGHT:
-                if(self.x_new  + 100 + self.speed > 360): self.x = 360
+                if(self.x_new  + 100 + self.speed > 360): self.x_new = 260
                 else: self.x_new += self.speed
     
     def Draw(self):
