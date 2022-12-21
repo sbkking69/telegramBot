@@ -14,7 +14,7 @@ def start(message):
 @bot.message_handler(commands=['help'])
 def help(message):
     pass
-
+print('hui')
 
 
 bot.polling(none_stop=True)
