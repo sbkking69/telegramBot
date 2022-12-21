@@ -26,8 +26,8 @@ listObj.append(boll)
 # Цикл игры
 running = True
 for obj in listObj:
-    obj.Start()
-    
+    obj.Start(screen)
+
 while running:
     # Держим цикл на правильной скорости
     clock.tick(FPS)
@@ -41,4 +41,5 @@ while running:
     for obj in listObj:
         obj.Update()
 
+    screen.fill((0,0,0))
     pygame.display.update()
