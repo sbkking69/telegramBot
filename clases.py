@@ -26,7 +26,7 @@ class Boll(GameObject):
         super().Start(sr)
         self.y = randint(-100, -20)
         self.x = randint(11, 349)
-        self.r = 10
+        self.r = randint(10,20)
         self.speed = randint(3,7)
 
     def Update(self):
@@ -44,7 +44,7 @@ class WhiteBall(Boll):
 
 
     def Draw(self):
-        pygame.draw.circle(self.sr, (255, 255, 255) , (self.x, self.y), self.r)
+        pygame.draw.circle(self.sr, (255, 255, 255) , (self.x, self.y), 10)
 
 
 class Player(GameObject):
