@@ -10,4 +10,6 @@ def start(message):
 def help(message):
     pass
 
+
+print('1')
 bot.polling(none_stop=True)
