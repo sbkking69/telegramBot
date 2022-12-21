@@ -40,6 +40,8 @@ class Boll(GameObject):
 
 class Player(GameObject):
     def Start(self):
+        self.y = 500
+        self.x = 180
         super().Start()
     
     def Update(self):
@@ -52,3 +54,6 @@ class Player(GameObject):
                     self.x += 10
                 elif event.key == pygame.K_RIGHT:
                     self.x -= 10
+    
+    def Draw(self):
+        pygame.draw.circle(self.sr, (0, 255, 0) , (self.x, self.y), 50)

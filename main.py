@@ -27,7 +27,7 @@ listObj.append(boll)
 running = True
 for obj in listObj:
     obj.Start(screen)
-    
+
 while running:
     # Держим цикл на правильной скорости
     clock.tick(FPS)
