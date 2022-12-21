@@ -58,7 +58,7 @@ while running:
     listObj = TimeList
     if len(listObj) < 4:
         a = randint(1,100)
-        if a <= 15:
+        if a <= 101:
             b = WhiteBall()
             b.Start(screen)
             listObj.append(b)

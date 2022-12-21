@@ -40,7 +40,20 @@ class Boll(GameObject):
 class WhiteBall(Boll):
     def Start(self, sr):
         super().Start(sr)
-        self.speed = 20
+        self.speed = 5
+        self.x = 170
+        self.speed2 = randint(-4, 4)
+
+
+    def Update(self):
+        super().Update()
+        self.x += self.speed2
+        if 20 <= self.x or self.x >= 320:
+            self.speed2 *= -1
+        self.x += 100*self.speed2
+
+        
+
 
 
     def Draw(self):
