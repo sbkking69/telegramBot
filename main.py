@@ -1,6 +1,8 @@
 import telebot
+import data
+import command
 
-bot = telebot.TeleBot("5919401327:AAHlByvIwXn9EcE9oyWDJhyM_YfVBHB0DQQ")
+bot = telebot.TeleBot(data.token)
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -9,5 +11,7 @@ def start(message):
 @bot.message_handler(commands=['help'])
 def help(message):
     pass
+
+
 
 bot.polling(none_stop=True)
