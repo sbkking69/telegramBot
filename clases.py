@@ -26,3 +26,5 @@ class Boll(GameObject):
 
     def Update(self):
         super().Update()
+
+    
