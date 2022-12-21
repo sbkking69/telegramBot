@@ -46,10 +46,15 @@ while running:
             TimeList.append(obj)
     listObj = TimeList
     if len(listObj) < 3:
-        b = Boll()
-        b.Start(screen)
-        listObj.append(b)
-        
+        a = randint(1,100)
+        if a <= 30:
+            b = WhiteBall()
+            b.Start(screen)
+            listObj.append(b)
+        else:
+            b = Boll()
+            b.Start(screen)
+            listObj.append(b)
 
         
 
