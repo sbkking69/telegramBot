@@ -27,8 +27,6 @@ class Boll(GameObject):
 
     def Update(self):
         super().Update()
-
+        
     def Draw(self, screen, RED):
         pygame.draw.circle(screen, RED, (self.x, self.y), 30)
-
-
