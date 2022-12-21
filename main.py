@@ -18,17 +18,18 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 
+index = 0
+
 listObj = []
 pl = Player()
 
 listObj.append(Boll())
-listObj.append(pl)
 
 # Цикл игры
 running = True
 for obj in listObj:
     obj.Start(screen)
-
+pl.Start(screen)
 while running:
     # Держим цикл на правильной скорости
     clock.tick(FPS)
@@ -38,18 +39,25 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
-        for obj in listObj:
-            obj.Event(event)
+        pl.Event(event)
 
     screen.fill((0,0,0))
+
+    pl.Update()
 
     TimeList = []
 
     for obj in listObj:
-        obj.Update()        
-        if obj.y <= 500:
+        obj.Update()
+        col = pl.Collision(obj)      
+        if obj.y <= 500 and not col:
             TimeList.append(obj)
+        if col:
+            index += 1
+            print(index)
     listObj = TimeList
+
+
     if len(listObj) < 7:
         a = randint(1,100)
         if a <= 30:
@@ -60,6 +68,7 @@ while running:
             b = Boll()
             b.Start(screen)
             listObj.append(b)
+        
 
         
 

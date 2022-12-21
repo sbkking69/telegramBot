@@ -79,5 +79,7 @@ class Player(GameObject):
         pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, self.width, self.hight))
 
     def Collision(self, obj):
-        if obj.y + 20 == self.y and obj.x :
-            pass
+        if obj.x + obj.r > self.x - obj.r and obj.x - obj.r < self.x + obj.r + self.width and obj.y > self.y and obj.y < self.y + self.hight:
+
+            return True
+        return False
