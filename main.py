@@ -38,6 +38,8 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
+        for obj in listObj:
+            obj.Event(event)
 
     screen.fill((0,0,0))
 
