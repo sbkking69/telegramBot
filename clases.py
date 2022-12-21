@@ -57,6 +57,8 @@ class Player(GameObject):
         self.speed = 50
         self.x_new = 180
         self.plavnoti = 5
+        self.health = 3
+
     
     def Update(self):
         super().Update()
