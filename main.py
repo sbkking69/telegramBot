@@ -26,7 +26,7 @@ listObj.append(boll)
 # Цикл игры
 running = True
 for obj in listObj:
-    obj.Start()
+    obj.Start(screen)
     
 while running:
     # Держим цикл на правильной скорости
