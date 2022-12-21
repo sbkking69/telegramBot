@@ -1,3 +1,4 @@
+import pygame
 class GameObject:
     def __init__(self):
         self.x = 0
@@ -26,3 +27,8 @@ class Boll(GameObject):
 
     def Update(self):
         super().Update()
+
+    def Draw(self, screen, RED):
+        pygame.draw.circle(screen, RED, (self.x, self.y), 30)
+
+
