@@ -1,5 +1,6 @@
 import pygame
 import random
+from clases import *
 
 WIDTH = 360
 HEIGHT = 480
@@ -16,8 +17,17 @@ pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
+
+listObj = []
+boll = Boll()
+listObj.append(boll)
+
+
 # Цикл игры
 running = True
+for obj in listObj:
+    obj.Start()
+    
 while running:
     # Держим цикл на правильной скорости
     clock.tick(FPS)
@@ -27,5 +37,8 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
-    pygame.draw.circle(screen, GREEN, (100, 100), 50)
+    
+    for obj in listObj:
+        obj.Update()
+
     pygame.display.update()

@@ -30,3 +30,18 @@ class Boll(GameObject):
         
     def Draw(self, screen, RED):
         pygame.draw.circle(screen, RED, (self.x, self.y), 30)
+
+class Player(GameObject):
+    def Start(self):
+        super().Start()
+    
+    def Update(self):
+        super().Update()
+
+    def Event(self):
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    self.x += 10
+                elif event.key == pygame.K_RIGHT:
+                    self.x -= 10
