@@ -61,7 +61,7 @@ while running:
             if obj.tag == "enum":
                 pl.health -= 1
             if obj.tag == 'ball':
-                index += 10 * obj.r
+                index += 1000 // obj.r
             
     listObj = TimeList
     if len(listObj) < 10:
