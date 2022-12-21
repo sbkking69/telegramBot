@@ -8,8 +8,10 @@ class Point:
         '''Перемещение координаты точки'''
         pass
     def Draw(self):
-        CursorPosition = (self.x, self.y)
-        print(self.sym)
+        CursorPosition = (self.x, self.y, self.sym)
+
     def Clear(self):
-        CursorPosition = (self.x, self.y)
-        print(' ')
+        CursorPosition = (self.x, self.y, self.sym)
+
+p1 = Point(10,5,'*')
+p1.Draw()
