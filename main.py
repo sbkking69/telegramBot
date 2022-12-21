@@ -21,8 +21,11 @@ running = True
 while running:
     # Держим цикл на правильной скорости
     clock.tick(FPS)
+    
     # Ввод процесса (события)
     for event in pygame.event.get():
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
+    pygame.draw.circle(screen, GREEN, (100, 100), 50)
+    pygame.display.update()
