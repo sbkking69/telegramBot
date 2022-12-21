@@ -28,6 +28,7 @@ class Boll(GameObject):
         self.x = randint(11, 349)
         self.r = randint(10,20)
         self.speed = randint(3,7)
+        self.tag = 'ball'
 
     def Update(self):
         super().Update()
@@ -42,15 +43,16 @@ class WhiteBall(Boll):
         super().Start(sr)
         self.speed = 5
         self.x = 170
-        self.speed2 = randint(-4, 4)
+        self.tag = 'enum'
+        self.speed2 = randint(-25,25)
 
 
     def Update(self):
         super().Update()
-        self.x += self.speed2
-        if 20 <= self.x or self.x >= 320:
+        if self.x < 20 or self.x > 340:
             self.speed2 *= -1
-        self.x += 100*self.speed2
+        self.y += self.speed
+        self.x += self.speed2
 
         
 
@@ -95,6 +97,5 @@ class Player(GameObject):
 
     def Collision(self, obj):
         if obj.x + obj.r > self.x - obj.r and obj.x - obj.r < self.x + obj.r + self.width and obj.y > self.y and obj.y < self.y + self.hight:
-
             return True
         return False

@@ -58,13 +58,15 @@ while running:
         if obj.y <= 500 and not col:
             TimeList.append(obj)
         if col:
-            pl.health -= 1
-            index += 1
-            print(index)
+            if obj.tag == "enum":
+                pl.health -= 1
+            if obj.tag == 'ball':
+                index += 10 * obj.r
+            
     listObj = TimeList
-    if len(listObj) < 4:
+    if len(listObj) < 10:
         a = randint(1,100)
-        if a <= 101:
+        if a <= 15:
             b = WhiteBall()
             b.Start(screen)
             listObj.append(b)
