@@ -24,16 +24,17 @@ class GameObject:
         pass
 
 class Boll(GameObject):
-    def Start(self):
+    def Start(self, sr):
         super().Start()
+        self.sr = sr
         self.y = -30
         self.x = randint(31, 329)
 
     def Update(self):
         super().Update()
 
-    def Draw(self, screen, RED):
-        pygame.draw.circle(screen, RED, (self.x, self.y), 30)
+    def Draw(self):
+        pygame.draw.circle(self.sr, RED, (self.x, self.y), 30)
 
 class Player(GameObject):
     def Start(self):
