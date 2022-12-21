@@ -15,6 +15,9 @@ def start(message):
 def help(message):
     pass
 
+def test():
+    print('Hi!')
+
 
 
 bot.polling(none_stop=True)
