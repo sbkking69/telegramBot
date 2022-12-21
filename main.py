@@ -50,7 +50,7 @@ while running:
         if obj.y <= 500:
             TimeList.append(obj)
     listObj = TimeList
-    if len(listObj) < 3:
+    if len(listObj) < 7:
         a = randint(1,100)
         if a <= 30:
             b = WhiteBall()

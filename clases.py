@@ -23,7 +23,7 @@ class GameObject:
 
 class Boll(GameObject):
     def Start(self, sr):
-        super().Start()
+        super().Start(sr)
         self.sr = sr
         self.y = randint(-1000, -20)
         self.x = randint(11, 349)
@@ -44,7 +44,9 @@ class WhiteBall(Boll):
 
 class Player(GameObject):
     def Start(self,sr):
-        super().Start(sr)        
+        super().Start(sr)  
+        self.width = 100
+        self.hight = 25      
         self.y = 400
         self.x = 180
         self.speed = 50
@@ -69,4 +71,8 @@ class Player(GameObject):
                 else: self.x_new += self.speed
     
     def Draw(self):
-        pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, 100, 25))
+        pygame.draw.rect(self.sr, (64, 128, 255) , (self.x, self.y, self.width, self.hight))
+
+    def Collision(self, obj):
+        if obj.y + 20 == self.y and obj.x :
+            pass
