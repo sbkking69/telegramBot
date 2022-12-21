@@ -2,6 +2,7 @@ import pygame
 import random
 from clases import *
 
+
 WIDTH = 360
 HEIGHT = 480
 FPS = 30
@@ -17,6 +18,10 @@ pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
+
+counterFont = pygame.font.SysFont('serif', 48)
+
+
 
 index = 0
 
@@ -53,6 +58,7 @@ while running:
         if obj.y <= 500 and not col:
             TimeList.append(obj)
         if col:
+            pl.health -= 1
             index += 1
             print(index)
     listObj = TimeList
@@ -68,7 +74,14 @@ while running:
             listObj.append(b)
         
 
-        
+    counterText = counterFont.render(str(index), False, (255, 255, 255))
+    screen.blit(counterText, (165, 0))
+    
+    HealthText = counterFont.render(str(pl.health*"♥"), False, (64, 128, 255))
+    screen.blit(HealthText, (0, 0))
+
+    if(pl.health <= 0):
+        running = False
 
 
     pygame.display.update()
