@@ -1,12 +1,15 @@
+from main import CursorPosition
 class Point:
     def __init__(self, x, y, sym):
-        pass
+        self.x = x
+        self.y = y
+        self.sym = sym
     def Move(self, x, y):
         '''Перемещение координаты точки'''
         pass
     def Draw(self):
-        '''Выводить по координатам символ / управление курсором в консоли!'''
-        pass
+        CursorPosition = (self.x, self.y)
+        print(self.sym)
     def Clear(self):
-        '''Очистка точки по координатам'''
-        pass
+        CursorPosition = (self.x, self.y)
+        print(' ')
