@@ -19,9 +19,7 @@ pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 
 listObj = []
-boll = Boll()
-listObj.append(boll)
-
+listObj.append(Boll())
 
 # Цикл игры
 running = True
@@ -44,9 +42,15 @@ while running:
 
     for obj in listObj:
         obj.Update()        
-        if obj.y >= 480:
+        if obj.y <= 500:
             TimeList.append(obj)
     listObj = TimeList
+    if len(listObj) < 3:
+        b = Boll()
+        b.Start(screen)
+        listObj.append(b)
+        
+
         
 
     pygame.display.update()

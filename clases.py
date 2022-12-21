@@ -28,7 +28,7 @@ class Boll(GameObject):
         self.sr = sr
         self.y = -20
         self.x = randint(11, 349)
-        self.speed = 5
+        self.speed = randint(15, 60)
 
     def Update(self):
         super().Update()
