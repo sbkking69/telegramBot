@@ -37,8 +37,11 @@ while running:
         # check for closing window
         if event.type == pygame.QUIT:
             running = False
-    
+            
+    screen.fill((0,0,0))
+
     for obj in listObj:
         obj.Update()
+
 
     pygame.display.update()

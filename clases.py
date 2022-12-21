@@ -26,14 +26,17 @@ class Boll(GameObject):
     def Start(self, sr):
         super().Start()
         self.sr = sr
-        self.y = 100
-        self.x = randint(31, 329)
+        self.y = -20
+        self.x = randint(11, 349)
+        self.speed = 5
 
     def Update(self):
         super().Update()
+        self.y += self.speed
+        
 
     def Draw(self):
-        pygame.draw.circle(self.sr, (255, 0, 0) , (self.x, self.y), 30)
+        pygame.draw.circle(self.sr, (255, 0, 0) , (self.x, self.y), 10)
 
 class Player(GameObject):
     def Start(self):
